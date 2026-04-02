@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>David Rice — Singer/Songwriter | Las Vegas, NV</title>
+  <meta name="description" content="David Rice. Singer/songwriter in Las Vegas with a soulful voice and loop pedal bringing full-band sound. Weddings, bars, restaurants, private events, and festivals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="demo-shared.css">
+  <script src="demo-shared.js" defer></script>
+  <style>
+    :root {
+      --bg: #0a0a0e;
+      --text: #e8e6e8;
+      --text-muted: #9ca3af;
+      --border: #2a2a32;
+      --accent: #c8963e;
+      --accent-glow: rgba(200, 150, 62, 0.4);
+      --accent-dim: rgba(200, 150, 62, 0.15);
+    }
+    body { font-family: 'Space Grotesk', sans-serif; }
+    .davidrice h1, .davidrice h2, .davidrice .demo-nav__logo { font-family: 'Instrument Serif', Georgia, serif; }
+
+    .davidrice .demo-nav {
+      background: rgba(10, 10, 14, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(200, 150, 62, 0.15);
+    }
+    .davidrice .demo-nav__logo { color: #fff; }
+    .davidrice .demo-nav__logo span { color: var(--accent); }
+    .davidrice .demo-nav__links a { color: rgba(255,255,255,0.9); }
+    .davidrice .demo-nav__links a::after { background: var(--accent); }
+    .davidrice .demo-nav__cta {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+    .davidrice .demo-nav__cta:hover { box-shadow: 0 0 36px var(--accent-glow); }
+    .davidrice .demo-nav__toggle span { background: #fff; }
+
+    .davidrice .demo-hero__overlay {
+      background: linear-gradient(135deg, rgba(10,10,14,0.95) 0%, rgba(10,10,14,0.5) 50%, transparent 100%);
+    }
+    .davidrice .demo-hero__content { color: #fff; }
+    .davidrice .demo-hero__badge {
+      background: rgba(200, 150, 62, 0.2);
+      border: 1px solid rgba(200, 150, 62, 0.4);
+      color: var(--accent);
+    }
+    .davidrice .btn--primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+    .davidrice .btn--primary:hover { box-shadow: 0 0 36px var(--accent-glow); }
+    .davidrice .btn--outline {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+    }
+    .davidrice .btn--outline:hover { background: rgba(255,255,255,0.08); }
+
+    .davidrice .demo-hero__bg video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .davidrice .demo-hero__bg img { display: none; }
+    .davidrice .demo-hero.loaded .demo-hero__bg video {
+      animation: heroPulse 12s ease-in-out infinite;
+    }
+    @keyframes heroPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @media (prefers-reduced-motion: reduce) { .davidrice .demo-hero.loaded .demo-hero__bg video { animation: none; } }
+
+    .davidrice .service-card { background: #12121a; border-color: var(--border); }
+    .davidrice .service-card:hover {
+      box-shadow: 0 0 40px var(--accent-glow);
+      border-color: rgba(200, 150, 62, 0.3);
+    }
+    .davidrice .service-card__icon { background: var(--accent-dim); }
+    .davidrice .service-card__icon svg { color: var(--accent); }
+
+    .davidrice .about-section { background: #12121a; }
+    .davidrice .stat__num { color: var(--accent); }
+
+    .davidrice .contact-strip { background: #050508; color: #e8e6e8; border-top: 1px solid var(--border); }
+    .davidrice .contact-item__icon { background: var(--accent-dim); }
+    .davidrice .contact-item__icon svg { color: var(--accent); }
+
+    .davidrice .demo-cta {
+      background: linear-gradient(135deg, #12121a 0%, #0a0a0e 100%);
+      border: 1px solid rgba(200, 150, 62, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .davidrice .demo-cta::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: radial-gradient(ellipse 40% 40% at 50% 50%, rgba(200, 150, 62, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .davidrice .demo-cta .demo-cta__inner { position: relative; z-index: 1; }
+    .davidrice .demo-cta .btn {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+
+    .davidrice .demo-footer { background: #050508; color: var(--text-muted); }
+
+    /* Music section — Spotify embed + Instagram */
+    .davidrice .music-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .davidrice .music-showcase__player {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .davidrice .music-showcase__player iframe {
+      display: block;
+      width: 100%;
+      border: none;
+    }
+    .davidrice .music-showcase__social {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .davidrice .music-showcase__social-card {
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(18, 18, 26, 0.6);
+    }
+    .davidrice .music-showcase__social-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .davidrice .music-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .davidrice .music-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.2rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: var(--accent-dim);
+      border: 1px solid rgba(200, 150, 62, 0.4);
+      color: var(--accent);
+      transition: background 0.3s, color 0.3s;
+    }
+    .davidrice .music-links a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      .davidrice .music-showcase { grid-template-columns: 1fr; }
+    }
+
+    /* Venue / Events grid */
+    .davidrice .venue-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .davidrice .venue-card {
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #12121a;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .davidrice .venue-card:hover {
+      border-color: rgba(200, 150, 62, 0.3);
+      box-shadow: 0 0 30px rgba(200, 150, 62, 0.1);
+    }
+    .davidrice .venue-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--accent-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .davidrice .venue-card__icon svg { color: var(--accent); width: 24px; height: 24px; }
+    .davidrice .venue-card__title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .davidrice .venue-card__desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+    @media (max-width: 640px) { .davidrice .venue-grid { grid-template-columns: 1fr; } }
+
+    /* Request Songs */
+    .davidrice .songs-section { background: #0a0a0e; }
+    .davidrice .songs-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+    .davidrice .songs-tab {
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: rgba(200, 150, 62, 0.1);
+      border: 1px solid rgba(200, 150, 62, 0.25);
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .davidrice .songs-tab:hover {
+      background: rgba(200, 150, 62, 0.2);
+      border-color: rgba(200, 150, 62, 0.4);
+    }
+    .davidrice .songs-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .davidrice .songs-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.75rem;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+    .davidrice .songs-list::-webkit-scrollbar { width: 8px; }
+    .davidrice .songs-list::-webkit-scrollbar-track { background: #12121a; border-radius: 4px; }
+    .davidrice .songs-list::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+    .davidrice .song-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #12121a;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .davidrice .song-item:hover {
+      border-color: rgba(200, 150, 62, 0.4);
+      transform: translateX(4px);
+    }
+    .davidrice .song-item__info { flex: 1; min-width: 0; }
+    .davidrice .song-item__title { font-weight: 600; font-size: 0.95rem; display: block; }
+    .davidrice .song-item__artist { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.15rem; }
+    .davidrice .song-item__request {
+      padding: 0.4rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--accent-dim);
+      border: 1px solid rgba(200, 150, 62, 0.4);
+      color: var(--accent);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .davidrice .song-item__request:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .davidrice .song-item__request.requested {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: rgba(34, 197, 94, 0.5);
+      color: #22c55e;
+    }
+    .davidrice .songs-panel { display: none; }
+    .davidrice .songs-panel.active { display: block; }
+    .davidrice .songs-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .davidrice .btn-tip {
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: var(--accent-dim);
+      border: 1px solid rgba(200, 150, 62, 0.4);
+      color: var(--accent);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .davidrice .btn-tip:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .davidrice .original-music {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .davidrice .original-music__label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .davidrice .original-music__links {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .davidrice .original-music__links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .davidrice .original-music__links a:hover {
+      border-color: rgba(200, 150, 62, 0.4);
+      background: rgba(200, 150, 62, 0.1);
+    }
+
+    /* Hero deco waves */
+    .davidrice .hero-deco__wave {
+      transform-origin: center;
+      animation: heroDecoWave 6s ease-in-out infinite;
+    }
+    .davidrice .hero-deco__wave--2 { animation-delay: -2s; }
+    .davidrice .hero-deco__wave--3 { animation-delay: -4s; }
+    @keyframes heroDecoWave {
+      0%, 100% { opacity: .5; transform: translateY(0) scale(1); }
+      50% { opacity: 1; transform: translateY(-8px) scale(1.06); }
+    }
+
+    /* Instagram section */
+    .davidrice .instagram-section {
+      background: #0a0a0e;
+      border-top: 1px solid var(--border);
+    }
+    .davidrice .instagram-embed-wrap {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body class="davidrice">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav class="demo-nav" aria-label="Main navigation">
+    <div class="demo-nav__inner">
+      <div class="demo-nav__logo" aria-label="David Rice">david <span>rice</span></div>
+      <ul class="demo-nav__links" role="list">
+        <li><a href="#music">Music</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#songs">Setlist</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="mailto:booking@davidricelive.com" class="demo-nav__cta" role="button">Book Now</a>
+      <button class="demo-nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="demo-hero" aria-label="Hero">
+      <div class="demo-hero__bg">
+        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1920&q=80">
+          <source src="https://assets.mixkit.co/videos/479/479-720.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="demo-hero__overlay" aria-hidden="true"></div>
+      <div class="demo-hero__content">
+        <div class="demo-hero__badge" data-reveal="up">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25"/></svg>
+          SINGER/SONGWRITER · LOOP PEDAL · FULL-BAND SOUND
+        </div>
+        <h1 class="demo-hero__title" data-reveal="up" data-reveal-delay="1">One Voice.<br>Full Sound. Live.</h1>
+        <p class="demo-hero__sub" data-reveal="up" data-reveal-delay="2">Singer/songwriter in Las Vegas with a soulful voice and a loop pedal that brings a full-band experience. From soothing indie acoustic to upbeat R&B/soul, alternative rock, and country.</p>
+        <div class="demo-hero__actions" data-reveal="up" data-reveal-delay="3">
+          <a href="#music" class="btn btn--primary" role="button">Listen Now</a>
+          <a href="#contact" class="btn btn--outline" role="button">Book for Your Event</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="demo-section" aria-labelledby="music-title">
+      <div class="demo-section__inner">
+        <div class="demo-section__header" data-reveal="up">
+          <p class="demo-section__eyebrow">Original Music</p>
+          <h2 class="demo-section__title" id="music-title">Listen to David Rice</h2>
+          <p class="demo-section__desc">Original songs built from soul, layered live. Stream on Spotify or catch a set in person.</p>
+        </div>
+        <div class="music-showcase">
+          <div class="music-showcase__player" data-reveal="up" data-reveal-delay="1">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2GixEWDWntHiYW2dzmlQTt?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          <div class="music-showcase__social" data-reveal="up" data-reveal-delay="2">
+            <div class="music-showcase__social-card">
+              <h3>Stream Everywhere</h3>
+              <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:1.25rem;">Originals like <em>Fade Away</em>, <em>Transcendent</em>, and <em>feel to heal</em> — layers of soul built from scratch.</p>
+              <div class="music-links">
+                <a href="https://open.spotify.com/artist/2GixEWDWntHiYW2dzmlQTt" target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                  Spotify
+                </a>
+                <a href="https://www.instagram.com/davidriceofficial/" target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                  Instagram
+                </a>
+              </div>
+            </div>
+            <div class="music-showcase__social-card">
+              <h3>Now Playing in Vegas</h3>
+              <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">Catch David live every Tuesday at Hank's Fine Steaks, Green Valley Ranch Resort. Rotating sets at Red Rock Resort and other Station Casinos venues.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="demo-section" style="background:#0a0a0e;">
+      <div class="demo-section__inner">
+        <div class="demo-section__header demo-section__header--center" data-reveal="up">
+          <p class="demo-section__eyebrow">Live Entertainment</p>
+          <h2 class="demo-section__title">Book David Rice</h2>
+          <p class="demo-section__desc">One musician, full-band sound. Acoustic guitar and loop pedal tailored to any venue, any vibe, any occasion.</p>
+        </div>
+        <div class="venue-grid">
+          <article class="venue-card" data-reveal="up" data-reveal-delay="1">
+            <div class="venue-card__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 0 1-3 0 2.704 2.704 0 0 0-3 0 2.704 2.704 0 0 1-3 0 2.704 2.704 0 0 0-3 0 2.704 2.704 0 0 1-3 0 2.701 2.701 0 0 0-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v7h18zm-3-9v-2a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2h12z"/></svg></div>
+            <h3 class="venue-card__title">Bars & Lounges</h3>
+            <p class="venue-card__desc">From happy hour to last call. Acoustic guitar, loop pedal, and a voice that fills the room. Currently performing at Hank's Fine Steaks at Green Valley Ranch and Red Rock Resort.</p>
+          </article>
+          <article class="venue-card" data-reveal="up" data-reveal-delay="2">
+            <div class="venue-card__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0z"/></svg></div>
+            <h3 class="venue-card__title">Weddings</h3>
+            <p class="venue-card__desc">Ceremony, cocktail hour, reception. Custom song arrangements, first dances, and the full-band loop pedal experience for your special day.</p>
+          </article>
+          <article class="venue-card" data-reveal="up" data-reveal-delay="3">
+            <div class="venue-card__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg></div>
+            <h3 class="venue-card__title">Private Events</h3>
+            <p class="venue-card__desc">Birthday parties, corporate events, holiday gatherings. Tailored setlists for any occasion and any size venue.</p>
+          </article>
+          <article class="venue-card" data-reveal="up" data-reveal-delay="4">
+            <div class="venue-card__icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg></div>
+            <h3 class="venue-card__title">Restaurants & Festivals</h3>
+            <p class="venue-card__desc">Ambient dinner sets or featured performances. From intimate restaurants to music festival main stages across Las Vegas and beyond.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="songs" class="demo-section songs-section" aria-labelledby="songs-title">
+      <div class="demo-section__inner">
+        <div class="demo-section__header demo-section__header--center" data-reveal="up">
+          <p class="demo-section__eyebrow">The Setlist</p>
+          <h2 class="demo-section__title" id="songs-title">Request Songs</h2>
+          <p class="demo-section__desc">Browse by genre — originals and covers. Tap to add requests for your event or tonight's set.</p>
+        </div>
+        <div class="songs-tabs" role="tablist" aria-label="Song genres" data-reveal="up" data-reveal-delay="1"></div>
+        <div class="songs-panels" data-reveal="up" data-reveal-delay="2">
+          <div class="songs-panel active" role="tabpanel">
+            <div class="songs-list"></div>
+          </div>
+        </div>
+        <div class="songs-footer" data-reveal="up" data-reveal-delay="3">
+          <button type="button" class="btn-tip" aria-label="Send a tip">Send a Tip</button>
+          <div class="original-music">
+            <span class="original-music__label">Stream originals:</span>
+            <div class="original-music__links">
+              <a href="https://open.spotify.com/artist/2GixEWDWntHiYW2dzmlQTt" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Spotify
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="demo-section about-section" aria-labelledby="about-title">
+      <div class="demo-section__inner">
+        <div class="about-split">
+          <div class="about-split__text" data-reveal="left">
+            <p class="demo-section__eyebrow">The Artist</p>
+            <h2 id="about-title">Soulful. Versatile. Live.</h2>
+            <p>David Rice is a singer/songwriter in Las Vegas, NV — best known for his angelic soulful voice and his versatility in style, ranging everywhere from soothing indie acoustic sounds to upbeat R&B/soul, alternative rock, and country.</p>
+            <p>He specializes in acoustic guitar paired with his loop pedal, bringing a full-band experience to every stage. Well-versed with a deep catalog of covers and original music, David has graced stages of every size — from coffee shops and intimate lounges to restaurants, casinos, and music festivals.</p>
+            <div class="stat-row">
+              <div class="stat">
+                <div class="stat__num" style="font-size:1.8rem;">Las Vegas</div>
+                <div class="stat__label">Home Base</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num" data-count="1" data-count-suffix="">0</div>
+                <div class="stat__label">Loop Pedal</div>
+              </div>
+              <div class="stat">
+                <div class="stat__num" style="font-size:1.8rem;">Full Band</div>
+                <div class="stat__label">Sound</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-split__visual" data-reveal="right">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80" alt="David Rice performing with acoustic guitar and loop pedal" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="instagram" class="demo-section instagram-section" aria-labelledby="ig-title">
+      <div class="demo-section__inner">
+        <div class="demo-section__header demo-section__header--center" data-reveal="up">
+          <p class="demo-section__eyebrow">Follow Along</p>
+          <h2 class="demo-section__title" id="ig-title">@davidriceofficial</h2>
+          <p class="demo-section__desc">Live clips, behind-the-scenes, and upcoming shows. Follow David on Instagram.</p>
+        </div>
+        <div class="instagram-embed-wrap" data-reveal="up" data-reveal-delay="1">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/davidriceofficial/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/davidriceofficial/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style="display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this profile on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style="width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style="width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style="background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style="width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/davidriceofficial/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank">David Rice</a> (@<a href="https://www.instagram.com/davidriceofficial/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank">davidriceofficial</a>) &bull; Instagram photos and videos</p></div></blockquote>
+          <script async src="//www.instagram.com/embed.js"></script>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="demo-section" style="background:#12121a;">
+      <div class="demo-section__inner">
+        <div class="demo-section__header demo-section__header--center" data-reveal="up">
+          <p class="demo-section__eyebrow">Get in Touch</p>
+          <h2 class="demo-section__title">Let's Make It Happen</h2>
+          <p class="demo-section__desc">Date, venue, vibe — send the details and David will send a quote. Weddings, bars, corporate, private events. Travel available.</p>
+        </div>
+        <div class="demo-section__header demo-section__header--center" data-reveal="up" data-reveal-delay="1">
+          <a href="mailto:booking@davidricelive.com" class="btn btn--primary" role="button">Request a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-strip" aria-label="Contact information">
+      <div class="contact-strip__inner">
+        <div class="contact-item">
+          <div class="contact-item__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg></div>
+          <div><div class="contact-item__label">Booking</div><div class="contact-item__value"><a href="mailto:booking@davidricelive.com">booking@davidricelive.com</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg></div>
+          <div><div class="contact-item__label">Based In</div><div class="contact-item__value">Las Vegas, NV · Travel available</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"/></svg></div>
+          <div><div class="contact-item__label">Instagram</div><div class="contact-item__value"><a href="https://www.instagram.com/davidriceofficial/" target="_blank" rel="noopener noreferrer">@davidriceofficial</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-cta" aria-labelledby="cta-heading">
+      <div class="demo-cta__inner">
+        <h2 id="cta-heading" data-reveal="up">Let's Make Some Music</h2>
+        <p data-reveal="up" data-reveal-delay="1">Weddings. Bars. Restaurants. Corporate. Private events. One musician, full-band sound.</p>
+        <a href="mailto:booking@davidricelive.com" class="btn btn--primary" role="button" data-reveal="up" data-reveal-delay="2">Book Now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="demo-footer" role="contentinfo">
+    <div class="demo-footer__inner">
+      <div class="demo-footer__brand">david <span>rice</span></div>
+      <p class="demo-footer__desc">Singer/Songwriter. Las Vegas, NV.</p>
+      <div class="demo-footer__bottom">
+        <p>&copy; 2026 David Rice. Las Vegas, Nevada.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    var tabsEl = document.querySelector('.davidrice .songs-tabs');
+    var listEl = document.querySelector('.davidrice .songs-list');
+    if (!tabsEl || !listEl) return;
+    var requested = new Set();
+    fetch('songs-by-genre.json').then(function(r) { return r.json(); }).then(function(data) {
+      var genres = data.genres || [];
+      genres.forEach(function(g, i) {
+        var tab = document.createElement('button');
+        tab.type = 'button';
+        tab.className = 'songs-tab' + (i === 0 ? ' active' : '');
+        tab.role = 'tab';
+        tab.id = 'tab-' + g.id;
+        tab.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        tab.setAttribute('aria-controls', 'panel-' + g.id);
+        tab.textContent = g.label;
+        tab.dataset.genreId = g.id;
+        tab.dataset.songs = JSON.stringify(g.songs || []);
+        tabsEl.appendChild(tab);
+      });
+      function songKey(s) {
+        return (s.title || s) + '|' + (s.artist || '');
+      }
+      function renderList(songs) {
+        listEl.textContent = '';
+        var list = (songs || []).slice();
+        list.sort(function(a, b) {
+          var artistA = (typeof a === 'string' ? '' : (a.artist || '')).toLowerCase();
+          var artistB = (typeof b === 'string' ? '' : (b.artist || '')).toLowerCase();
+          return artistA.localeCompare(artistB);
+        });
+        list.forEach(function(s) {
+          var title = typeof s === 'string' ? s : (s.title || '');
+          var artist = typeof s === 'string' ? '' : (s.artist || '');
+          var key = songKey({ title: title, artist: artist });
+          var item = document.createElement('div');
+          item.className = 'song-item';
+          var info = document.createElement('div');
+          info.className = 'song-item__info';
+          var titleEl = document.createElement('span');
+          titleEl.className = 'song-item__title';
+          titleEl.textContent = title;
+          info.appendChild(titleEl);
+          if (artist) {
+            var artistEl = document.createElement('span');
+            artistEl.className = 'song-item__artist';
+            artistEl.textContent = artist;
+            info.appendChild(artistEl);
+          }
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'song-item__request';
+          btn.textContent = requested.has(key) ? 'Requested' : 'Request';
+          if (requested.has(key)) btn.classList.add('requested');
+          btn.addEventListener('click', function() {
+            requested.add(key);
+            btn.classList.add('requested');
+            btn.textContent = 'Requested';
+          });
+          item.append(info, btn);
+          listEl.appendChild(item);
+        });
+      }
+      var firstTab = tabsEl.querySelector('.songs-tab');
+      if (firstTab) renderList(JSON.parse(firstTab.dataset.songs || '[]'));
+      tabsEl.querySelectorAll('.songs-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          tabsEl.querySelectorAll('.songs-tab').forEach(function(t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          renderList(JSON.parse(tab.dataset.songs || '[]'));
+        });
+      });
+    }).catch(function() {
+      listEl.innerHTML = '<p style="color:var(--text-muted);padding:2rem;">Unable to load song list. Please try again later.</p>';
+    });
+  })();
+  </script>
+</body>
+</html>

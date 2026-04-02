@@ -1,0 +1,148 @@
+{
+  "genres": [
+    {
+      "id": "originals",
+      "label": "Originals",
+      "songs": [
+        {"title": "SOLO", "artist": "David Rice feat. Blake Wisner"},
+        {"title": "Fade Away", "artist": "David Rice"},
+        {"title": "Sumthin I Donno", "artist": "David Rice feat. Taber Shy & Corey Smith"},
+        {"title": "Mushroom Cloud", "artist": "David Rice feat. Navid Fana"},
+        {"title": "in due time", "artist": "David Rice feat. Recline"},
+        {"title": "CLAY", "artist": "David Rice feat. The Poet Kaylé"},
+        {"title": "The Harvest", "artist": "David Rice feat. Navid Fana"},
+        {"title": "Transcendent", "artist": "David Rice"},
+        {"title": "a conversation", "artist": "David Rice"},
+        {"title": "feel to heal", "artist": "David Rice"}
+      ]
+    },
+    {
+      "id": "pop",
+      "label": "Pop",
+      "songs": [
+        {"title": "Beautiful Things", "artist": "Benson Boone"},
+        {"title": "Birds of a Feather", "artist": "Billie Eilish"},
+        {"title": "Blinding Lights", "artist": "The Weeknd"},
+        {"title": "Circles", "artist": "Post Malone"},
+        {"title": "Cruel Summer", "artist": "Taylor Swift"},
+        {"title": "Dance the Night", "artist": "Dua Lipa"},
+        {"title": "Die with a Smile", "artist": "Lady Gaga & Bruno Mars"},
+        {"title": "Espresso", "artist": "Sabrina Carpenter"},
+        {"title": "Flowers", "artist": "Miley Cyrus"},
+        {"title": "Good Luck, Babe!", "artist": "Chappell Roan"},
+        {"title": "Heat Waves", "artist": "Glass Animals"},
+        {"title": "Houdini", "artist": "Dua Lipa"},
+        {"title": "Levitating", "artist": "Dua Lipa"},
+        {"title": "Please Please Please", "artist": "Sabrina Carpenter"},
+        {"title": "Slow It Down", "artist": "Benson Boone"},
+        {"title": "Stargazing", "artist": "Myles Smith"},
+        {"title": "Stay", "artist": "The Kid LAROI & Justin Bieber"},
+        {"title": "Stick Season", "artist": "Noah Kahan"},
+        {"title": "Too Sweet", "artist": "Hozier"},
+        {"title": "Vampire", "artist": "Olivia Rodrigo"},
+        {"title": "We Can't Be Friends", "artist": "Ariana Grande"},
+        {"title": "What Was I Made For?", "artist": "Billie Eilish"}
+      ]
+    },
+    {
+      "id": "rb",
+      "label": "R&B / Soul",
+      "songs": [
+        {"title": "Adorn", "artist": "Miguel"},
+        {"title": "All of Me", "artist": "John Legend"},
+        {"title": "Best Part", "artist": "Daniel Caesar feat. H.E.R."},
+        {"title": "Come Through", "artist": "H.E.R."},
+        {"title": "Earned It", "artist": "The Weeknd"},
+        {"title": "Golden", "artist": "Harry Styles"},
+        {"title": "I'm Not the Only One", "artist": "Sam Smith"},
+        {"title": "Isn't She Lovely", "artist": "Stevie Wonder"},
+        {"title": "Kiss from a Rose", "artist": "Seal"},
+        {"title": "Leave the Door Open", "artist": "Silk Sonic"},
+        {"title": "Lose Control", "artist": "Teddy Swims"},
+        {"title": "Love on Top", "artist": "Beyoncé"},
+        {"title": "Made for Me", "artist": "Muni Long"},
+        {"title": "Ordinary People", "artist": "John Legend"},
+        {"title": "Saturn", "artist": "SZA"},
+        {"title": "Signed, Sealed, Delivered", "artist": "Stevie Wonder"},
+        {"title": "Snooze", "artist": "SZA"},
+        {"title": "Superstition", "artist": "Stevie Wonder"},
+        {"title": "There's Nothing Holdin' Me Back", "artist": "Shawn Mendes"},
+        {"title": "Thinking Out Loud", "artist": "Ed Sheeran"},
+        {"title": "Treasure", "artist": "Bruno Mars"},
+        {"title": "Versace on the Floor", "artist": "Bruno Mars"},
+        {"title": "When I Was Your Man", "artist": "Bruno Mars"}
+      ]
+    },
+    {
+      "id": "country",
+      "label": "Country",
+      "songs": [
+        {"title": "A Bar Song (Tipsy)", "artist": "Shaboozey"},
+        {"title": "Austin", "artist": "Dasha"},
+        {"title": "Buy Dirt", "artist": "Jordan Davis feat. Luke Bryan"},
+        {"title": "Cover Me Up", "artist": "Jason Isbell"},
+        {"title": "Die a Happy Man", "artist": "Thomas Rhett"},
+        {"title": "Fast Car", "artist": "Luke Combs"},
+        {"title": "I Had Some Help", "artist": "Post Malone feat. Morgan Wallen"},
+        {"title": "I Remember Everything", "artist": "Zach Bryan feat. Kacey Musgraves"},
+        {"title": "Last Night", "artist": "Morgan Wallen"},
+        {"title": "Need a Favor", "artist": "Jelly Roll"},
+        {"title": "Pink Skies", "artist": "Zach Bryan"},
+        {"title": "Pour Me a Drink", "artist": "Post Malone feat. Blake Shelton"},
+        {"title": "Speechless", "artist": "Dan + Shay"},
+        {"title": "Tennessee Whiskey", "artist": "Chris Stapleton"},
+        {"title": "The Painter", "artist": "Cody Johnson"},
+        {"title": "White Horse", "artist": "Chris Stapleton"},
+        {"title": "Wind Up Missin' You", "artist": "Tucker Wetmore"}
+      ]
+    },
+    {
+      "id": "rock",
+      "label": "Rock / Alternative",
+      "songs": [
+        {"title": "Budapest", "artist": "George Ezra"},
+        {"title": "Counting Stars", "artist": "OneRepublic"},
+        {"title": "End of Beginning", "artist": "Djo"},
+        {"title": "Feel It Still", "artist": "Portugal. The Man"},
+        {"title": "Ho Hey", "artist": "The Lumineers"},
+        {"title": "Home", "artist": "Edward Sharpe & The Magnetic Zeros"},
+        {"title": "I Will Wait", "artist": "Mumford & Sons"},
+        {"title": "Iris", "artist": "Goo Goo Dolls"},
+        {"title": "Little Talks", "artist": "Of Monsters and Men"},
+        {"title": "Mr. Brightside", "artist": "The Killers"},
+        {"title": "Riptide", "artist": "Vance Joy"},
+        {"title": "Santeria", "artist": "Sublime"},
+        {"title": "Semi-Charmed Life", "artist": "Third Eye Blind"},
+        {"title": "Sweater Weather", "artist": "The Neighbourhood"},
+        {"title": "Take Me Home, Country Roads", "artist": "John Denver"},
+        {"title": "Wonderwall", "artist": "Oasis"}
+      ]
+    },
+    {
+      "id": "classics",
+      "label": "Classics & Wedding",
+      "songs": [
+        {"title": "A Thousand Years", "artist": "Christina Perri"},
+        {"title": "All You Need Is Love", "artist": "The Beatles"},
+        {"title": "At Last", "artist": "Etta James"},
+        {"title": "Better Together", "artist": "Jack Johnson"},
+        {"title": "Can't Help Falling in Love", "artist": "Elvis Presley"},
+        {"title": "Come Away with Me", "artist": "Norah Jones"},
+        {"title": "Fly Me to the Moon", "artist": "Frank Sinatra"},
+        {"title": "Have I Told You Lately", "artist": "Van Morrison"},
+        {"title": "I Don't Want to Miss a Thing", "artist": "Aerosmith"},
+        {"title": "I'm Yours", "artist": "Jason Mraz"},
+        {"title": "Into the Mystic", "artist": "Van Morrison"},
+        {"title": "Let's Stay Together", "artist": "Al Green"},
+        {"title": "Make You Feel My Love", "artist": "Adele"},
+        {"title": "Over the Rainbow", "artist": "Israel Kamakawiwo'ole"},
+        {"title": "Perfect", "artist": "Ed Sheeran"},
+        {"title": "Stand by Me", "artist": "Ben E. King"},
+        {"title": "The Way You Look Tonight", "artist": "Frank Sinatra"},
+        {"title": "Unchained Melody", "artist": "The Righteous Brothers"},
+        {"title": "What a Wonderful World", "artist": "Louis Armstrong"},
+        {"title": "You Are the Best Thing", "artist": "Ray LaMontagne"}
+      ]
+    }
+  ]
+}
