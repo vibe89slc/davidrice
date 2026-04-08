@@ -7,34 +7,79 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <meta name="theme-color" content="#0a0a0e">
   <title>Thanks — originals, book me &amp; tip · David Rice</title>
-  <meta name="description" content="Thank you for tonight. Stream my original music, hire me for your bar, wedding, or private night, and tip Cash App or Venmo if you can — Las Vegas singer-songwriter.">
+  <meta name="description" content="Thank you for tonight. Stream my original music, hire me for your bar, wedding, or event, and tip Cash App or Venmo if you can — Las Vegas singer-songwriter.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="David Rice">
   <meta property="og:title" content="Thanks — hear my originals, hire me &amp; tip">
-  <meta property="og:description" content="Thank you for the love. My songs on Spotify, booking for your next event, and ways to tip — all in one place. David Rice, Las Vegas.">
+  <meta property="og:description" content="Thank you for the love. My songs on Spotify & Apple Music, booking for your next event, and ways to tip — all in one place. David Rice, Las Vegas.">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Thanks — David Rice | originals, hire &amp; tip">
-  <meta name="twitter:description" content="Thank you! Stream my originals, book live music for your night, and tip if you’d like — Cash App &amp; Venmo.">
+  <meta name="twitter:description" content="Thank you! Stream my originals on Spotify & Apple Music, book live music for your night, and tip if you’d like — Cash App &amp; Venmo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="demo-shared.css">
+  <script src="demo-shared.js" defer></script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0e;
+      --text: #e8e6e8;
+      --text-muted: #9ca3af;
+      --border: #2a2a32;
+      --accent: #c8963e;
+      --accent-glow: rgba(200, 150, 62, 0.4);
+      --accent-dim: rgba(200, 150, 62, 0.15);
+    }
     html {
       height: 100%;
       overflow: hidden;
       -webkit-text-size-adjust: 100%;
     }
-    body {
+    body.davidrice.thanks-page {
       height: 100%;
       overflow: hidden;
       font-family: 'Space Grotesk', system-ui, sans-serif;
-      background: #0a0a0e;
-      color: #e8e6e8;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+    }
+    .davidrice .demo-nav {
+      background: rgba(10, 10, 14, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(200, 150, 62, 0.15);
+    }
+    .davidrice .demo-nav__logo {
+      font-family: 'Instrument Serif', Georgia, serif;
+      color: #fff;
+      font-size: clamp(1.65rem, 4.8vw, 2.15rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+    .davidrice .demo-nav__logo span { color: var(--accent); }
+    .davidrice .demo-nav__links a { color: rgba(255, 255, 255, 0.9); }
+    .davidrice .demo-nav__links a::after { background: var(--accent); }
+    .davidrice .demo-nav__cta {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+    .davidrice .demo-nav__cta:hover { box-shadow: 0 0 36px var(--accent-glow); }
+    .davidrice .demo-nav__toggle span { background: #fff; }
+
+    .thanks-layout {
+      flex: 1;
+      min-height: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: max(0.75rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(0.75rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+      padding: 0.5rem max(1rem, env(safe-area-inset-right)) max(0.75rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+      padding-top: calc(5rem + env(safe-area-inset-top, 0px));
+    }
+    @media (max-width: 768px) {
+      .thanks-layout { padding-top: calc(4.75rem + env(safe-area-inset-top, 0px)); }
     }
     .thanks {
       width: 100%;
@@ -46,15 +91,6 @@
       gap: clamp(0.28rem, 1.5vw, 0.5rem);
       flex-shrink: 0;
     }
-    .thanks__brand {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: clamp(1.08rem, 4.5vw, 1.35rem);
-      font-weight: 400;
-      color: #fff;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-    .thanks__brand span { color: #c8963e; }
     .thanks__title {
       font-family: 'Instrument Serif', Georgia, serif;
       font-size: clamp(1.35rem, 6.5vw, 1.85rem);
@@ -134,9 +170,25 @@
     }
   </style>
 </head>
-<body>
-  <main class="thanks">
-    <p class="thanks__brand">david <span>rice</span></p>
+<body class="davidrice thanks-page">
+  <a class="skip-link" href="#thanks-main">Skip to main content</a>
+
+  <nav class="demo-nav" aria-label="Main navigation">
+    <div class="demo-nav__inner">
+      <a href="index.html" class="demo-nav__logo" aria-label="David Rice">david <span>rice</span></a>
+      <ul class="demo-nav__links" role="list">
+        <li><a href="index.html#music">Music</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#instagram">Instagram</a></li>
+        <li><a href="book.html">Hire me</a></li>
+      </ul>
+      <a href="book.html" class="demo-nav__cta" role="button">Book David</a>
+      <button class="demo-nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="thanks-layout">
+  <main id="thanks-main" class="thanks">
     <h1 class="thanks__title">Thanks for the requests</h1>
     <p class="thanks__p">You made the set better. More of what you heard: my <strong>originals</strong> on Spotify — same voice, loop pedal, full room.</p>
     <p class="thanks__p"><strong>Hire</strong> me for your bar, wedding, or private night — I’ll bring the same energy.</p>
@@ -153,5 +205,6 @@
       <a class="thanks__btn" href="https://venmo.com/code?user_id=1956908449660928887&amp;created=1647710325.648871&amp;printed=1" target="_blank" rel="noopener noreferrer">Venmo</a>
     </div>
   </main>
+  </div>
 </body>
 </html>
